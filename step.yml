@@ -85,6 +85,7 @@ inputs:
       is_expand: true
       is_required: false 
       value_options:
+        - $turbo_environment
         - prod 
         - preprod
   - turbo_library_version: $turbo_library_version 

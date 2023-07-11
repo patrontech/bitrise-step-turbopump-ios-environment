@@ -87,7 +87,7 @@ inputs:
       value_options:
         - prod 
         - preprod
-  - turbo_environment: $turbo_library_version 
+  - turbo_library_version: $turbo_library_version 
     opts:
       title: "Library Version (turbo_library_version)"
       summary: The version of Library to use. 

@@ -74,7 +74,7 @@ inputs:
       description: |
         The Greencopper CMS project to use.
       is_expand: true
-      is_required: true
+      is_required: false 
       value_options: []
   - turbo_environment: $turbo_environment 
     opts:
@@ -83,7 +83,7 @@ inputs:
       description: |
         This is the Greencopper CMS environment, either `prod` or `preprod`.
       is_expand: true
-      is_required: true
+      is_required: false 
       value_options:
         - prod 
         - preprod
@@ -94,7 +94,7 @@ inputs:
       description: |
         Library contains most of the actual code of the application.
       is_expand: true
-      is_required: true
+      is_required: false 
       value_options: []
 
 outputs:

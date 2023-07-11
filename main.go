@@ -8,24 +8,44 @@ import (
 	"github.com/bitrise-io/go-utils/v2/log"
 )
 
+type envvar struct {
+	name         string
+	required     bool
+	defaultValue *string
+}
+
+func newEnvvar(name string, required bool, defaultValue *string) envvar {
+	return envvar{name, required, defaultValue}
+}
+
 func main() {
 	logger := log.NewLogger()
 	setEnv(getEnv(logger, "turbo_project", "turbo_environment", "turbo_library_version"), logger)
 	os.Exit(0)
 }
 
-// getEnv retrieves the given variables from the environment as a map.
-// Note that it exits the program early using os.Exit(1) if the variable
-// is not set. All variables are assumed to be required.
-func getEnv(logger log.Logger, varnames ...string) map[string]string {
+func getEnv(logger log.Logger, envvars ...interface{}) map[string]string {
 	result := map[string]string{}
-	for _, varname := range varnames {
-		varvalue := os.Getenv(varname)
-		if len(strings.TrimSpace(varvalue)) == 0 {
-			logger.Errorf("No value for the required variable $%s was found.", varname)
+	for _, v := range envvars {
+		var ev envvar
+		switch v := v.(type) {
+		case envvar:
+			ev = v
+		case string:
+			ev = newEnvvar(v, false, nil)
+		default:
+			logger.Warnf("Invalid type passed to getEnv. Skipping.")
+			continue
+		}
+		varvalue := strings.TrimSpace(os.Getenv(ev.name))
+		if len(varvalue) > 0 {
+			result[ev.name] = varvalue
+		} else if ev.defaultValue != nil {
+			result[ev.name] = *ev.defaultValue
+		} else if ev.required {
+			logger.Errorf("No value for the required variable $%s was found.", ev.name)
 			os.Exit(1)
 		}
-		result[varname] = varvalue
 	}
 	return result
 }

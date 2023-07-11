@@ -46,6 +46,7 @@ func getEnv(logger log.Logger, envvars ...interface{}) map[string]string {
 			logger.Errorf("No value for the required variable $%s was found.", ev.name)
 			os.Exit(1)
 		}
+		logger.Infof("Value of environment variable $%s is %s.", ev.name, varvalue)
 	}
 	return result
 }

@@ -75,7 +75,6 @@ inputs:
         The Greencopper CMS project to use.
       is_expand: true
       is_required: false 
-      value_options: []
   - turbo_environment: $turbo_environment 
     opts:
       title: "CMS Environment (turbo_environment)"
@@ -96,7 +95,6 @@ inputs:
         Library contains most of the actual code of the application.
       is_expand: true
       is_required: false 
-      value_options: []
 
 outputs:
   - turbo_project:

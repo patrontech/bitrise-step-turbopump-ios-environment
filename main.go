@@ -20,7 +20,8 @@ func newEnvvar(name string, required bool, defaultValue *string) envvar {
 
 func main() {
 	logger := log.NewLogger()
-	setEnv(getEnv(logger, "turbo_project", "turbo_environment", "turbo_library_version"), logger)
+	buildProduct := newEnvvar("build_product", true, nil)
+	setEnv(getEnv(logger, "turbo_project", "turbo_environment", "turbo_library_version", buildProduct), logger)
 	os.Exit(0)
 }
 

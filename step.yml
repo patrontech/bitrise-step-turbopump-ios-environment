@@ -94,6 +94,18 @@ inputs:
         Library contains most of the actual code of the application.
       is_expand: true
       is_required: false 
+  - build_product: essaieca
+    opts:
+      title: "Build product"
+      summary: "Determines what kind of product to build and what to do with it."
+      description: |
+        There are three possiblities for iOS: `essaieca`, `appstore`, `appstore+upload`
+      is_expand: false
+      is_required: true
+      value_options:
+        - essaieca 
+        - appstore
+        - appstore+upload
 
 outputs:
   - turbo_project:
@@ -114,3 +126,9 @@ outputs:
       summary: The version of Library to use. 
       description: |
         Library contains most of the actual code of the application.
+  - build_product:
+    opts:
+      title: "Build product"
+      summary: "Determines what kind of product to build and what to do with it."
+      description: |
+        There are three possibilities for iOS: `essaieca`, `appstore`, `appstore+upload`.

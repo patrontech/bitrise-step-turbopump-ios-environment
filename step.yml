@@ -13,9 +13,9 @@ summary: |
   Injects environment variables for Turbopump
 description: |
   Injects environment variables for Turbopump
-website: https://github.com/patrontech/bitrise-step-turbopump-environment
-source_code_url: https://github.com/patrontech/bitrise-step-turbopump-environment
-support_url: https://github.com/patrontech/bitrise-step-turbopump-environment/issues
+website: https://github.com/patrontech/bitrise-step-turbopump-ios-environment
+source_code_url: https://github.com/patrontech/bitrise-step-turbopump-ios-environment
+support_url: https://github.com/patrontech/bitrise-step-turbopump-ios-environment/issues
 
 # If this step should be available only for certain project types
 # just uncomment this `project_type_tags` section and include all the
@@ -63,8 +63,7 @@ type_tags:
 
 toolkit:
   go:
-    package_name: github.com/patrontech/bitrise-step-turbopump-environment
-
+    package_name: github.com/patrontech/bitrise-step-turbopump-ios-environment
 
 inputs:
   - turbo_project: $turbo_project

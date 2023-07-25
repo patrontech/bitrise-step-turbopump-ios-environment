@@ -1,4 +1,4 @@
-module github.com/patrontech/bitrise-step-turbopump-environment
+module github.com/patrontech/bitrise-step-turbopump-ios-environment
 
 go 1.20
 

@@ -94,16 +94,16 @@ inputs:
         Library contains most of the actual code of the application.
       is_expand: true
       is_required: false 
-  - build_product: essaieca
+  - build_product: package
     opts:
       title: "Build product"
       summary: "Determines what kind of product to build and what to do with it."
       description: |
-        There are three possiblities for iOS: `essaieca`, `appstore`, `appstore+upload`
+        There are three possiblities for iOS: `package`, `appstore`, `appstore+upload`
       is_expand: false
       is_required: true
       value_options:
-        - essaieca 
+        - package 
         - appstore
         - appstore+upload
 
@@ -131,4 +131,4 @@ outputs:
       title: "Build product"
       summary: "Determines what kind of product to build and what to do with it."
       description: |
-        There are three possibilities for iOS: `essaieca`, `appstore`, `appstore+upload`.
+        There are three possibilities for iOS: `package`, `appstore`, `appstore+upload`.

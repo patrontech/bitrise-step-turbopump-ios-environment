@@ -94,6 +94,14 @@ inputs:
         Library contains most of the actual code of the application.
       is_expand: true
       is_required: false 
+  - turbo_version: $turbo_version
+    opts:
+      title: "Turbopump Version (turbo_version)"
+      summary: The version of Turbopump to use.
+      description: |
+        By default, this is set in the Turbofile, but can be overridden here.
+      is_expand: true
+      is_required: false
   - build_product: package
     opts:
       title: "Build product"

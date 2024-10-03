@@ -21,11 +21,11 @@ func newEnvvar(name string, required bool, defaultValue *string) envvar {
 func main() {
 	logger := log.NewLogger()
 	buildProduct := newEnvvar("build_product", true, nil)
-	setEnv(getEnv(logger, "turbo_project", "turbo_environment", "turbo_library_version", buildProduct), logger)
+	setEnv(getEnv(logger, "turbo_project", "turbo_environment", "turbo_library_version", "turbo_version", buildProduct), logger)
 	os.Exit(0)
 }
 
-func getEnv(logger log.Logger, envvars ...interface{}) map[string]string {
+func getEnv(logger log.Logger, envvars ...any) map[string]string {
 	result := map[string]string{}
 	for _, v := range envvars {
 		var ev envvar

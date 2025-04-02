@@ -102,6 +102,30 @@ inputs:
         By default, this is set in the Turbofile, but can be overridden here.
       is_expand: true
       is_required: false
+  - turbo_bundle_id: $turbo_bundle_id
+    opts:
+      title: "Override the iOS bundle id (turbo_bundle_id)"
+      summary: The iOS bundle id
+      description: |
+        Leave blank to use the bundle id from the CMS
+      is_expand: true
+      is_required: false
+  - turbo_team_id: $turbo_team_id
+    opts:
+      title: "Override the iOS team id (turbo_team_id)"
+      summary: The iOS team id 
+      description: |
+        Leave blank to use the team id from the CMS
+      is_expand: true
+      is_required: false
+  - turbo_team_name: $turbo_team_name
+    opts:
+      title: "Override the iOS team name (turbo_team_name)"
+      summary: The iOS team name 
+      description: |
+        Leave blank to use the team name from the CMS
+      is_expand: true
+      is_required: false
   - build_product: package
     opts:
       title: "Build product"
@@ -134,6 +158,30 @@ outputs:
       summary: The version of Library to use. 
       description: |
         Library contains most of the actual code of the application.
+  - turbo_version:
+    opts:
+      title: "Version of Turbopump (turbo_version)"
+      summary: The version of Turbopump to use
+      description: |
+        Should be left blank most of the time.
+  - turbo_bundle_id:
+    opts:
+      title: "Bundle ID (turbo_bundle_id)"
+      summary: Overrides the Bundle ID from the CMS. 
+      description: |
+        Should almost always be left blank. 
+  - turbo_team_id:
+    opts:
+      title: "Team ID (turbo_team_id)"
+      summary: Overrides the Team ID from the CMS. 
+      description: |
+        Should almost always be left blank. 
+  - turbo_team_name:
+    opts:
+      title: "Team Name (turbo_team_name)"
+      summary: Overrides the Team Name from the CMS. 
+      description: |
+        Should almost always be left blank. 
   - build_product:
     opts:
       title: "Build product"
